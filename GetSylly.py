@@ -24,10 +24,20 @@ vowels = set(vowels)
 #reading words in from file
 def ReadWords(inf='wordlist.10000'):
 
+	#ensures readable words
+
 	lst = open(inf,'r')
 	for n in lst:
 		n = n.rstrip() #sanitization
-		words.append(n)
+		if len(n) > 3:
+			vc = 0
+			ii = 0
+			while ii < len(n):
+				if n[ii] in vowels:
+					words.append(n)
+					break
+				ii+=1
+				
 
 
 
