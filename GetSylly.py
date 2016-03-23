@@ -92,7 +92,7 @@ def CountSyllables(word):
 def GetSyllableCounts(inlist=words):
 
 	for w in inlist:
-		#syl = CountSyllables(w)
+
 
 		if isOneSyllable(w):
 			one.append(w)
