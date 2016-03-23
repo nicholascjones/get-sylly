@@ -37,8 +37,6 @@ def ReadWords(inf='wordlist.10000'):
 				ii+=1
 
 
-
-
 #count syllables in a given word
 def CountSyllables(word):
 
@@ -94,13 +92,13 @@ def CountSyllables(word):
 def GetSyllableCounts(inlist=words):
 
 	for w in inlist:
-		syl = CountSyllables(w)
+		#syl = CountSyllables(w)
 
-		if syl == 1:
+		if isOneSyllable(w):
 			one.append(w)
-		elif syl == 2:
+		elif isTwoSyllables(w):
 			two.append(w)
-		elif syl == 3:
+		elif isThreeSyllables(w):
 			three.append(w)
 
 #		print w
@@ -214,12 +212,32 @@ def MakeHaiku():
 	phrase += "\n"
 	return phrase
 
+def isOneSyllable(s):
+	if CountSyllables(s) == 1:
+		return True
+	else:
+		return False
+
+def isTwoSyllables(s):
+	if CountSyllables(s) == 2:
+		return True
+	else:
+		return False
+
+def isThreeSyllables(s):
+	if CountSyllables(s) == 3:
+		return True
+	else:
+		return False
+
+
 
 #de-facto main function initialization
 
 #initialization at startup
 ReadWords()
 GetSyllableCounts()
+del words[:] #deletes word list for space sake
 
 #instructions
 print "\n"
@@ -227,6 +245,9 @@ print "Hello, welcome to Nick's Syllable Counter and Random Haiku Generator!!"
 print "\n"
 print "Enter an 'h' to receive a Haiku!"
 print "Enter a word to see how many syllables it has!"
+print "Enter 1 to see if a word has one syllable"
+print "Enter 2 to see if a word has two syllables"
+print "Enter 3 to see if a word has three syllables"
 print "Enter 'Q' to quit."
 print "\n"
 response = 'x' #generic response as to not cause problems
@@ -239,7 +260,13 @@ while (response != 'Q'): #case switch kills it all
 		break
 	elif response == 'h':
 		print MakeHaiku()
-	else: 
+	elif response == '1':
+		print isOneSyllable(raw_input("What is your word?\n"))
+	elif response == '2':
+		print isTwoSyllables(raw_input("What is your word?\n"))
+	elif response == '3':
+		print isThreeSyllables(raw_input("What is your word?\n"))
+	else:
 		try:
 			print CountSyllables(response)
 			print "\n"
