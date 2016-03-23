@@ -83,11 +83,6 @@ def CountSyllables(word):
 		else:
 			if word[i] not in vowels:
 				if (i + 3 == l) or (i + 4 == l):
-#					if (i+3 == l):
-#						if word[i] == 't' and (word[i+2] == 'd' or word[i+2] == 's'):
-#							vcount += 1
-#							break
-					#if i + 3 < l:
 					if word[i+1] == 'l' and word[i+2] == 'e':
 						vcount+=1
 						break
@@ -174,16 +169,50 @@ def MakeFiveClause():
 		p2 = MakeThreeClause()
 		p3 = MakeOneClause()
 		phrase = p1 + p2 + p3
+	return phrase
 
+
+def MakeSevenClause():
+
+	rn = random.randint(0,17)
+
+	if rn < 5:
+		p1 = MakeOneClause()
+		p2 = MakeFiveClause()
+		p3 = MakeOneClause()
+		phrase = p1 + p2 + p3
+	elif rn < 10:
+		p1 = MakeTwoClause()
+		p2 = MakeFiveClause()
+		phrase = p1 + p2
+	elif rn < 15:
+		p1 = MakeFiveClause()
+		p2 = MakeTwoClause()
+		phrase = p1 + p2
+	elif rn == 15:
+		p2 = MakeOneClause()
+		p1 = MakeThreeClause()
+		p3 = MakeThreeClause()
+		phrase = p1 + p2 + p3
+	elif rn == 16:
+		p1 = MakeOneClause()
+		p2 = MakeThreeClause()
+		p3 = MakeThreeClause()
+		phrase = p1 + p2 + p3
+	else:
+		p3 = MakeOneClause()
+		p2 = MakeThreeClause()
+		p1 = MakeThreeClause()
+		phrase = p1 + p2 + p3
 	return phrase
 
 def MakeHaiku():
 	phrase = ""
-	phrase += MakeThreeClause()
-	phrase += "\n"
 	phrase += MakeFiveClause()
 	phrase += "\n"
-	phrase += MakeThreeClause()
+	phrase += MakeSevenClause()
+	phrase += "\n"
+	phrase += MakeFiveClause()
 	phrase += "\n"
 	return phrase
 
