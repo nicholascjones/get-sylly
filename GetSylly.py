@@ -37,7 +37,7 @@ def ReadWords(inf='wordlist.10000'):
 					words.append(n)
 					break
 				ii+=1
-				
+
 
 
 
@@ -124,9 +124,9 @@ def MakeOneClause():
 
 def MakeTwoClause():
 
-	rn = random.randint(0,7)
+	rn = random.randint(0,2)
 
-	if rn < 5:
+	if rn == 0:
 		n = random.randint(0,len(two)-1)
 		phrase = two[n] + " "
 	else:
@@ -138,13 +138,13 @@ def MakeTwoClause():
 
 def MakeThreeClause():
 
-	rn = random.randint(0,8)
+	rn = random.randint(0,2)
 
 	if rn == 0:
 		n = random.randint(0,len(three)-1)
 		phrase = three[n] + " "
 
-	elif rn < 4:
+	elif rn == 1:
 		p1 = MakeTwoClause()
 		p2 = MakeOneClause()
 		phrase = p1 + p2
@@ -177,6 +177,17 @@ def MakeFiveClause():
 
 	return phrase
 
+def MakeHaiku():
+	phrase = ""
+	phrase += MakeThreeClause()
+	phrase += "\n"
+	phrase += MakeFiveClause()
+	phrase += "\n"
+	phrase += MakeThreeClause()
+	phrase += "\n"
+	return phrase
+
+
 
 
 
@@ -184,6 +195,9 @@ def MakeFiveClause():
 
 
 #de-facto main function initialization
+
+print "Welcome to my Haiku Generator!"
+
 ReadWords()
 
 #print words
@@ -194,30 +208,13 @@ ReadWords()
 
 GetSyllableCounts()
 
-print CountSyllables('relax')
-print CountSyllables('anal')
 
-print CountSyllables('mounts')
-print CountSyllables('output')
+print MakeHaiku()
+print MakeHaiku()
+print MakeHaiku()
+print MakeHaiku()
+print MakeHaiku()
 
-print "\n\n\n\n"
-
-
-print MakeThreeClause()
-print MakeThreeClause()
-print MakeThreeClause()
-print MakeThreeClause()
-print MakeThreeClause()
-
-print "\n hey \n"
-
-
-print MakeFiveClause()
-print MakeFiveClause()
-print MakeFiveClause()
-print MakeFiveClause()
-print MakeFiveClause()
-print MakeFiveClause()
 
 
 
