@@ -245,6 +245,38 @@ print MakeHaiku()
 print MakeHaiku()
 
 
+#instructions
+print "\n"
+print "Hello, welcome to Nick's Random Sentence Generator!!"
+print "\n"
+print "Enter an 'h' to receive a Haiku!"
+print "Enter a word to see how many syllables it has!"
+print "Enter 'Q' to quit."
+print "\n"
+response = 'x' #generic response as to not cause problems
+
+while (response != 'Q'): #case switch kills it all
+
+	#prompt given with responses used to control flow
+	response = raw_input("What would you like to do?\n")
+	if response == 'Q':
+		break
+	elif response == 'h':
+		print MakeHaiku()
+	else: 
+		try:
+			print CountSyllables(response)
+			print "\n"
+		except ValueError:
+			print "Invalid input. Please try again."
+			continue
+		
+
+
+print "\n" #newline easy to print
+#end execution
+
+
 
 
 
