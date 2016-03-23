@@ -17,7 +17,7 @@ Running:
 
 Using:	
 
-	Use of this program is primarily explained through the interactive menu. Upon initial execution, the user is welcomed, and given instructions. While there is a small dictionary of words already included at startup (primarily the first words that came to mind when writing the program), the user can enter '+' at the menu to add a word to one of the dictionaries by following the given instructions. At the menu, the user is also able to enter 'Q' to quit the program. Lastly, the user can enter any positive integer at the menu, and the program will take the user's number and generate that many random sentences using the algorithm. If the user enterse any other value in the menu, they will be told that the input is invalid and taken back to the menu.
+	Use of this program is primarily explained through the interactive menu. Upon initial execution, the user is welcomed, and given instructions. The word list (given by an MIT list) is read into the program at startup. At the menu, the user is also able to enter 'Q' to quit the program. The entry of "h" gives the user a haiku. Lastly, the user can enter any word at the menu, and the program will determine the number of syllables (assuming valid input) of the word entered.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -33,6 +33,6 @@ Theory:
 
 Technology:
 
-	This project was written with Python 2.7 on a Ubuntu Virtual Machine using Oracle VirtualBox on a Mac.
+	This project was written with Python 2.7 on a Mac.
 		
 

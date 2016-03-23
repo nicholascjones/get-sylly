@@ -8,7 +8,6 @@
 import random
 import string
 
-
 #List Initialization for Syllable Counts
 
 words = []
@@ -17,7 +16,6 @@ two = []
 three = []
 vowels = ['a','e','i','o','u']
 vowels = set(vowels)
-
 
 #functions
 
@@ -217,37 +215,15 @@ def MakeHaiku():
 	return phrase
 
 
-
-
-
-
-
-
 #de-facto main function initialization
 
-print "Welcome to my Haiku Generator!"
-
+#initialization at startup
 ReadWords()
-
-#print words
-
-#print ('a' in vowels)
-
-#print CountSyllables('underwritten')
-
 GetSyllableCounts()
-
-
-print MakeHaiku()
-print MakeHaiku()
-print MakeHaiku()
-print MakeHaiku()
-print MakeHaiku()
-
 
 #instructions
 print "\n"
-print "Hello, welcome to Nick's Random Sentence Generator!!"
+print "Hello, welcome to Nick's Syllable Counter and Random Haiku Generator!!"
 print "\n"
 print "Enter an 'h' to receive a Haiku!"
 print "Enter a word to see how many syllables it has!"
