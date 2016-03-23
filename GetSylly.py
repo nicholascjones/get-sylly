@@ -46,19 +46,20 @@ def CountSyllables(word):
 		
 		if (word[i] in vowels): #if is in vowels
 			if i + 1 == l:
-				vcount+=1
-				break;
-			elif i + 2 == l:
-				if word[i] == 'e' and word[i+1] == 'd':
-					vcount += 1
+				if word[i] == 'e':
+					break
+				else:
+					vcount+=1
+					break
+			elif (i + 2 == l) and (word[i] == 'e') and (word[i+1] == 'd'):
+				vcount += 1
+				i+=1
+				continue
+			elif word[i+1] in vowels:
 					i+=1
 					continue
 			else:
-				if (word[i+1] in vowels):
-					i+=1
-					continue
-				else:
-					vcount += 1
+				vcount += 1
 		elif word[i] == 'y':
 			if i == 0:
 				i+=1
@@ -183,11 +184,11 @@ ReadWords()
 
 GetSyllableCounts()
 
-print CountSyllables('lane')
-print CountSyllables('clock')
+print CountSyllables('relax')
+print CountSyllables('anal')
 
-print CountSyllables('violin')
-print CountSyllables('hawaiian')
+print CountSyllables('mounts')
+print CountSyllables('output')
 
 print "\n\n\n\n"
 
